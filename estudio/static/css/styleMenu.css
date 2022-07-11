@@ -1,0 +1,249 @@
+* {
+    margin: 0; 
+    padding: 0;
+    box-sizing: border-box;
+}
+.header{
+    height: 80px;
+    grid-area: header;
+    background-color: #272727;
+    padding: 1px;
+}
+
+
+body { 
+    min-height: 100%;
+    background-color: #dddddd;
+    font-family: 'Raleway', sans-serif;
+}
+
+footer {
+    background-color: #272727;
+    size: 10%;
+    text-align: left;
+  }
+
+
+/*Botones*/
+
+.boton{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 50px;
+    background: #282828;
+    color: #fff;
+    font-size:18px;
+    font-weight: 400;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: .3s ease all;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+}
+.boton span{
+    position: relative;
+    z-index: 2;
+    transition: .3s ease all;
+}
+.boton::after{
+    content: "";
+    width:1px;
+    height:1px;
+    background: none;
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transition: .3s ease-in-out;
+    border-radius: 100px;
+    transform-origin: center;
+}
+.boton:hover::after{
+    transform: scale(400);
+    background: #748593;
+}
+
+.boton2{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    height: 50px;
+    background: #282828;
+    color: #fff;
+    font-size: 100%;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: .3s ease all;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+}
+.boton2 span{
+    position: relative;
+    z-index: 2;
+    transition: .3s ease all;
+}
+.boton2::after{
+    content: "";
+    width:1px;
+    height:1px;
+    background: none;
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transition: .3s ease-in-out;
+    border-radius: 100px;
+    transform-origin: center;
+}
+.boton2:hover::after{
+    transform: scale(400);
+    background: #748593;
+}
+
+/*Text elements*/
+.titulo {
+    font-size: 30px;
+    font-family: 'Raleway';
+    color: #CAC9C9;
+    position: 50%;
+}
+
+.subtitulo {
+    margin: 50;
+    color: #000;
+    display: inline;
+    font-size: 19px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+
+.desc { 
+    color: rgb(46, 46, 46);
+    margin: 7px 0;
+    font-size: 14px;
+    font-weight: 100;
+    text-shadow: 1px 1px 1px rgba(206, 206, 206, 0.7);
+    font-family: 'Open Sans', bold;
+    margin-top: 0;
+}
+
+.linea-division {
+    width: 50%;
+    height: 30px;
+}
+
+
+.container{
+    margin: 0;
+    width: 100%;
+}
+
+.carousel {
+    min-height: 600px;
+}
+
+.carousel .carousel-item {
+    background: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    width: 300px;
+    height: 500px;
+    box-shadow: 0px 0px 15px 3px #b3b5bb;
+}
+
+.carousel .carousel-item img {
+    width: 27%;
+    height: 30%;
+    justify-content:center;
+    object-fit: contain;
+    position: absolute;
+    top: 20px;
+    z-index: -1;
+    border-radius: 10px;
+}
+
+.elem{
+    width: 60%;
+    height: 30%;
+    object-fit: cover;
+    justify-content:center;
+    position: absolute;
+}
+
+.elem2{
+    margin-top: 7%;
+    margin-left: 10%;
+    width: 80%;
+    height: 30%;
+    justify-content:center;
+    align-items: center;
+    max-width: 350px;
+}
+
+.elem-item img{
+    flex: 1;
+    margin-top: 20%;
+    margin-left: 25%;
+    width: 50%;
+    justify-content: center;
+    object-fit: contain;
+    border-radius: 10px;
+    max-width: 130px;
+}
+
+.flex-container {
+    display: flex;
+    max-width: 1000px;
+    min-height: 575px;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 5%;
+    gap: 4%;
+}
+
+.flex-container2 {
+    display: flex;
+    max-width: 1000px;
+    min-height: 575px;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 5%;
+    gap: 4%;
+    flex-wrap: wrap;
+}
+
+
+.flex-child {
+    flex: 1;
+    background: rgb(245, 245, 245);
+    box-shadow: 0px 0px 15px 3px #b3b5bb;
+    height: 500px;
+}
+
+.flex-child2 {
+    flex: 100 100 10px;
+    min-width: 220px;
+    background: rgb(245, 245, 245);
+    box-shadow: 0px 0px 15px 3px #b3b5bb;
+    max-height: 500px;
+    flex-wrap: wrap;
+}
+
+.tabla {
+    flex: 1;
+    background: rgb(245, 245, 245);
+    box-shadow: 0px 0px 15px 3px #b3b5bb;
+    height: 500px;
+}

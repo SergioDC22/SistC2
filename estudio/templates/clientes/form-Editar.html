@@ -1,0 +1,74 @@
+<form id="Form" enctype="multipart/form-data" method="post">
+  {% csrf_token %}
+  {% for campo in formulario %}
+    <div class="mb-3">
+      {% if campo.field.widget.input_type == "text" and campo.name == "claveFiscal"%}
+        <label for="" class="form-label">{{campo.label}}</label>
+        <input 
+        type="password"
+        class="form-control" 
+        name="{{campo.name}}"
+        id="" 
+        aria-describedby="helpId" 
+        placeholder="{{campo.label}}"
+        value="{{ campo.value | default:''}}"
+        readonly
+        autofocus required
+        >
+      {%else%}
+      {% if campo.field.widget.input_type == "text" and campo.name == "RazonSocial" %}
+        <label for="" class="form-label">{{campo.label}}</label>
+        <input 
+        type="{{ campo.field.widget.input_type}}"
+        class="form-control" 
+        name="{{campo.name}}"
+        id="" 
+        aria-describedby="helpId" 
+        placeholder="{{campo.label}}"
+        value="{{ campo.value | default:''}}"
+        autofocus required
+        >
+      {%else%}
+      {% if campo.field.widget.input_type == "text" and campo.name == "CUIT"%}
+      <label for="" class="form-label">{{campo.label}}</label>
+      <input 
+        type="{{ campo.field.widget.input_type}}"
+        class="form-control" 
+        name="{{campo.name}}"
+        min="1000000000"
+        max="9999999999"
+        id="" 
+        aria-describedby="helpId" 
+        placeholder="{{campo.label}}"
+        value="{{ campo.value | default:''}}"
+        readonly
+        autofocus required
+        >
+      {%else%}
+      {% if campo.field.widget.input_type == "checkbox" and campo.name == "isEstado"%}
+      <label for="" class="checkbox" readonly></label>
+
+      <label class="container">
+        <input 
+        type="checkbox"
+        checked="checked"
+        class="" 
+        name="{{campo.name}}"
+        id="" 
+        aria-describedby="helpId" 
+        value="{{ campo.value | default:''}}"
+        readonly
+        >
+        <span class="checkmarkk"></span>
+        </label>
+      {%endif%}
+      {%endif%}
+      {%endif%}
+      {%endif%}
+    </div>
+    <div class="col-12 help-text">{{campo.errors}}</div>
+  {% endfor %}
+  
+  <input name="" id="" class="btn-succes" type="submit" value="Guardar Datos">
+
+</form>

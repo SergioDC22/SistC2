@@ -1,0 +1,121 @@
+* {
+    margin: 0; 
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body { 
+    min-height: 100vh;
+    background-image: linear-gradient(-45deg, #dddddd 50%, #758593 50%);
+    font-family: 'Raleway', sans-serif;
+}
+
+.boton{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 50px;
+    background: #282828;
+    color: #fff;
+    font-size:20px;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: .3s ease all;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+}
+.boton {
+    position: relative;
+    z-index: 2;
+    transition: .3s ease all;
+}
+.boton::after{
+    content: "";
+    width:1px;
+    height:1px;
+    background: none;
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transition: .3s ease-in-out;
+    border-radius: 100px;
+    transform-origin: center;
+}
+.boton:hover::after{
+    transform: scale(400);
+    background: #748593;
+}
+.titulo {
+    font-size: 40px;
+    font-family: 'Dancing Script', cursive;
+    margin-bottom: 40px;
+    color: #fff;
+}
+
+.subtitulo {
+    margin: 50;
+    color: #000;
+    display: inline;
+    font-size: 20px;
+    font-weight: 500;
+    text-transform: uppercase;
+    
+}
+
+.desc { 
+    color: rgb(149, 149, 149);
+    margin: 7px 0;
+    font-size: 14px;
+    font-weight: 100;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.7);
+    font-family: 'Arial', cursive;
+    margin-top: 0;
+}
+
+.linea-division {
+    width: 50%;
+    height: 30px;
+
+}
+
+/* ESTILOS MATERIALIZE */
+
+.carousel {
+    min-height: 500px;
+}
+
+.carousel .carousel-item {
+    background: rgb(230, 230, 230);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    width: 300px;
+    height:500px;
+}
+
+.carousel .carousel-item img {
+    width: 30%;
+    height: 30%;
+    justify-content:center;
+    object-fit: contain;
+    position: absolute;
+    top:0;
+    z-index: -1;
+    border-radius: 10px;
+}
+.elem{
+    width: 60%;
+    height: 30%;
+    object-fit: cover;
+    justify-content:center;
+    position: absolute;
+    
+}
+

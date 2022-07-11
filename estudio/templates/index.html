@@ -1,0 +1,83 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Caompatible" content="ie=edge">
+    <title>Estudio Contable</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Raleway:500,600&display=swap" rel="stylesheet">
+
+    <!-- Materialize.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- CSS Estilos -->
+    <link rel="stylesheet" href="estudio/static/css/styleMenu.css">
+</head>
+
+<body>
+    
+    <div>
+        <div class = "header">
+        <h1 class="left-align titulo">Estudio contable</h1>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col s12">
+
+                <div class="carousel center-align">
+
+                    <div class="carousel-item">
+                        <img src="../static/img/usuarios.png" alt="">
+                        <div class="elem">
+                            <h2 class="subtitulo">GESTION DE USUARIOS</h2>
+                            <div class="linea-division"></div>
+                            <p class="desc">Crear, eliminar o modificar
+                                los usuarios que poseen
+                                acceso al sistema.</p>
+                            <div class="linea-division"></div>
+                            <a class="boton" href="#"><span>VER</span></a>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="../static/img/clientes.png" alt="">
+
+                        <div class="elem">
+                            <h2 class="subtitulo">GESTION DE CLIENTES</h2>
+                            <div class="linea-division"></div>
+                            <p class="desc">Agregar, eliminar o modificar los datos de clientes del estudio contable</p>
+                            <div class="linea-division"></div>
+                            <a class="boton" href="{% url 'clientes' %}"><span>VER</span></a>                        
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../static/img/reloj.png" alt="">
+
+                        <div class="elem">
+                            <h2 class="subtitulo">Impuestos proximos a Vencer</h2>
+                            <div class="linea-division"></div>
+                            <p class="desc">Cosulta la lista de los
+                                impuestos cuyas fechas
+                                de vencimiento se
+                                aproximan.</p>
+                            <div class="linea-division"></div>
+                            <a class="boton" href="#"><span>Mantenimiento</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Materialize.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <!-- JS Main -->
+    <script src="estudio/js/main.js"></script>
+</body>
+
+</html>

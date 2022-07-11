@@ -1,0 +1,56 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>{% block titulo %}  {% endblock %}</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS v5.2.0-beta1 -->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/stylesForm.css' %}">
+    <link rel="stylesheet" href="{% static 'css/stylesMostrar.css' %}">
+
+  </head>
+
+  <body>
+    <nav>
+        <ul>
+          <li>
+            <a href="{% url 'index' %}">Inicio</a>
+          </li>
+          <li>
+            <a href="{% url 'clientes' %}">Clientes</a>
+          </li>
+          <li>
+            <a href="{% url 'nosotros' %}">Nosotros</a>
+          </li>
+        </ul>
+    </nav>
+    <div id ="container">
+      <div class="row">
+        <div class="col-12">
+          {% block contenido %}  {% endblock %}
+        </div>
+      </div>
+    </div>
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    {%if messages%}
+      {%for m in messages %}
+        {{m}}
+        <script>
+          Swal.fire({
+            "title": "Felicitaciones",
+          "text": "{{m}}",
+          "icon": "success"})
+        </script>
+      {%endfor %}
+    {%endif%}
+    
+      {% block js%}
+      {% endblock%}
+
+    </body>
+</html>

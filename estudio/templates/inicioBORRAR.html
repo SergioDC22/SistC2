@@ -1,0 +1,71 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Caompatible" content="ie=edge">
+    <title>Estudio Contable</title>
+   
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Raleway:500,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;570&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+    <!-- CSS Estilos -->
+    <link rel="stylesheet"  href="../static/css/stylesLogin.css">
+    
+</head>
+
+<body>
+    <header>
+        <h1 class="titulo">Estudio contable</h1>
+    </header>
+
+    <div class="body">
+        <div class = "flex-container">
+            <div class = "flex-child2">
+                <div class = "elcosito" style="height: 10px;"></div>
+                <div class= "aboutUs">
+                    <div class = "nosotros">
+                        <h3 class = "subtitulo2">Sobre nosostros</h3>
+                    </div>
+                    <h6 style="padding: 15px ; color:#c6c6c6 ; font-family:'Raleway' ; font-size:14.5px ; text-align:center;">
+                        Es un sistema que
+                        brinda al usuario una
+                        cómoda experiencia a
+                        la hora de gestionar
+                        los vencimientos de
+                        impuestos de los
+                        clientes de un 
+                        estudio contable.</h6>
+                </div>
+            </div>
+            <div class = "flex-child">
+                <div class = "elcosito"></div>
+                <h5 class = "subtitulo" style="text-align: center;">Ingreso de usuario</h5>
+                <form name="ingreso" method="POST" action="{% url 'django.contrib.auth.views.login' %}">
+                    {% csrf_token %}
+                    <div class="flex-child-input">
+                        <br>
+                        <input class="login_input" type="text" name="username" id="usuario" placeholder="Usuario" required>
+                        <input class="login_input" type="password" name="password" id="contrasenia" placeholder="Contraseña" required>
+                    </div>
+                    <div class="flex-child-button">
+                        {% comment %} <input type="submit" class="boton"> > </input> {% endcomment %}
+                        <a class="boton" href="{% url 'index' %}"><span>></span></a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+    </footer>
+
+    <!-- JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src='../static/js/main.js'></script>
+
+</body>
+</html>

@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% block titulo %} Lista de Clientes {% endblock %}
+
+{% block js%}
+    <script>
+        function clienteInactivo(id){
+            Swal.fire({
+                "title":"¿Esta seguro?",
+                "text": "El cliente pasara al estado INACTIVO y no se mostrará en las consultas",
+                "icono":"question",
+                "showCancelButton": true,
+                "cancelButtonText": "No, Cancelar",
+                "confirmButtonText": "Si, Estoy seguro",
+                "reverseButtons": true,
+                "confirmButtonColor": "#dc3545"
+            })
+            .then(function(result) {
+                if (result.isConfirmed){
+                    window.location.href="/eliminar/"+id
+                }
+            })
+        }
+    </script>
+{%endblock%}
+
+
+{% block contenido %} 
+
+<div class="card">
+    <a name="" id="" class="aaa" href="{%url 'crearC' %}" role="button">Agregar nuevo Cliente</a>
+    <div class="card-body">
+        <h4 class="title">Lista de clientes</h4>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID Cliente</th>
+                    <th>CUIT</th>
+                    {% comment %} <th>Clave Fiscal</th> {% endcomment %}
+                    <th>Razon Social</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for cliente in clientes %}
+                    {%if cliente.isEstado%}
+                        <tr>
+                            <td>{{cliente.idCli}}</td>
+                            <td>{{cliente.CUIT}}</td>
+                            {% comment %} <td>{{cliente.claveFiscal}}</td> {% endcomment %}
+                            <td>{{cliente.RazonSocial}}</td>
+                            {%if cliente.isEstado%}
+                                <td>Activo</td>
+                            {%else%}
+                                <td>Inactivo</td>
+                            {%endif%}
+                            <td>
+                                <a name="" id="" class="estilosSubBoton" href="{% url 'editarC' cliente.idCli %}" role="button">Modificar</a>
+                                |
+                                <a name="" id="" class="estilosSubBoton" onclick="clienteInactivo({{cliente.idCli}})" href="#" role="button">Dar de Baja</a>                        <!-- <a name="" id="" class="btn btn-danger" href="#" role="button">Baja</a> -->
+                                
+                            </td>
+                        </tr>
+                    {%endif%}
+                {% endfor %}
+            </tbody>
+        </table>
+        
+
+    </div>
+    <div class="subBoton">
+        <a name="" id="" class="estilosSubBoton" href="{%url 'inactivosC'%}" role="button">Clientes Inactivos</a>
+    </div>
+</div>
+
+
+{% endblock %}
