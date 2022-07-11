@@ -82,3 +82,5 @@ def activarC(request, idCli):
     messages.success(request,'Se cambio al estado ACTIVO Correctamente')
     return redirect('clientes')
 
+
+
